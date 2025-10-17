@@ -26,9 +26,23 @@ mvn spring-boot:run
 - /api/curve-points/{id} → Met à jour un CurvePoint.
 - /api/curve-points/{id} → Supprime un CurvePoint.
 
+### Ratings (/api/ratings)
+- /api/ratings → Liste paginée des CurvePoints.
+- /api/ratings/{id} → Détail d’un CurvePoint.
+- /api/ratings → Crée un CurvePoint.
+- /api/ratings/{id} → Met à jour un CurvePoint.
+- /api/ratings/{id} → Supprime un CurvePoint.
+
+### Rules (/api/rules)
+- /api/rules → Liste paginée des CurvePoints.
+- /api/rules/{id} → Détail d’un CurvePoint.
+- /api/rules → Crée un CurvePoint.
+- /api/rules/{id} → Met à jour un CurvePoint.
+- /api/rules/{id} → Supprime un CurvePoint.
+
 ## À faire (voir limitations plus bas)
-- Compléter DTO/Service/Controller pour Rating, Rule, Trade, User (patron identique à Bid).
-- Compléter les tests pour Rating, Rule, Trade, User.
+- Compléter DTO/Service/Controller pour Trade, User (patron similaire à Bid).
+- Compléter les tests pour Bid, CurvePoint, Rating, Rule, Trade, User.
 
 ## Sécurité
 - Authentification par **session** avec `formLogin` Spring Security.
