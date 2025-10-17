@@ -8,10 +8,6 @@ mvn spring-boot:run
 # UI H2: http://localhost:8080/h2-console  (JDBC URL: jdbc:h2:mem:poseidon)
 ```
 
-Comptes seedés :
-- admin / Admin#2025! (ROLE_ADMIN)
-- user  / User#2025! (ROLE_USER)
-
 ## Endpoints
 - /api/health → OK
 - /api/bids [GET, POST, PUT, DELETE] (auth requis)
