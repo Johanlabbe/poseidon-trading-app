@@ -23,6 +23,3 @@ mvn spring-boot:run
 ## Tests
 - `BidServiceImplTest` (Mockito)
 - `StrongPasswordValidatorTest`
-
-## Limitations
-Voir la section dans la réponse ChatGPT.
