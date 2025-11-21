@@ -53,6 +53,7 @@ public class SecurityConfig {
     /**
      * Main security filter chain configuring endpoints protection.
      * CSRF is kept enabled to protect form-based UI.
+     * 
      * @param http HttpSecurity
      * @return SecurityFilterChain
      * @throws Exception if the configuration fails
@@ -62,8 +63,9 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**", "/login", "/api/health"))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/logout", "/error", "/h2-console/**", "/api/health").permitAll()
-                        .requestMatchers("/api/**").hasAnyRole("USER", "ADMIN") // GET/POST/PUT/DELETE
+                        .requestMatchers("/", "/home", "/css/**", "/login", "/error", "/h2-console/**").permitAll()
+                        .requestMatchers("/bidList/**", "/curvePoint/**", "/rating/**", "/ruleName/**", "/trade/**", "/user/**")
+                        .authenticated()
                         .anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults())
                 .logout(l -> l.logoutUrl("/app-logout").logoutSuccessUrl("/login?logout").invalidateHttpSession(true)
