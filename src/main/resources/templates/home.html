@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title> Spring Boot </title>
-    <link rel="stylesheet" href="/css/styles.css"/>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<h3> HOME PAGE </h3>
-<p>
-    <a href="/login">Login</a> or create one <a href="/user/list">User management</a>
-</p>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-6">
+            <a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
+            <a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
+            <a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
+            <a href="/trade/list">Trade</a>&nbsp;|&nbsp;
+            <a href="/ruleName/list">Rule</a>
+        </div>
+        <div class="col-6 text-right">
+            Logged in user: <b class="user"><span sec:authentication="name">User</span></b>
+            <form th:action="@{/app-logout}" method="POST" style="display:inline;">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-12">
+            <div class="jumbotron">
+                <h1 class="display-4">Welcome to Poseidon</h1>
+                <p class="lead">Financial Trading App</p>
+                <hr class="my-4">
+                <p>You are logged in. Use the navigation bar above to manage financial data.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="/user/list" role="button">User Management</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
